@@ -17,6 +17,7 @@ export default function Home() {
     });
     const data = await response.json();
     setResult(data.result);
+    console.log(data.result);
     setAnimalInput("");
   }
 
@@ -34,7 +35,7 @@ export default function Home() {
           <input
             type="text"
             name="animal"
-            placeholder="Enter an animal"
+            placeholder="What is on your mind, my friend?"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
