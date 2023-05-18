@@ -16,8 +16,6 @@ export default async function (req, res) {
 }
 
 function generatePrompt(prompt) {
-  /* const capitalizedAnimal =
-    animal[0].toUpperCase() + .slice(1).toLowerCase(); */
   return `Siddhartha Gautama, also known as the Buddha, 
   is giving advice to one of his followers. The year is 400 B.C.E.
 

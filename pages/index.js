@@ -5,9 +5,11 @@ import styles from "./index.module.css";
 export default function Home() {
   const [promptInput, setPromptInput] = useState("");
   const [result, setResult] = useState();
+  const [isLoading, setIsLoading] = useState(false); // New state variable
 
   async function onSubmit(event) {
     event.preventDefault();
+    setIsLoading(true); // Set loading to true when request starts
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -19,6 +21,7 @@ export default function Home() {
     setResult(data.result);
     console.log(data.result);
     setPromptInput("");
+    setIsLoading(false); // Set loading to false when request ends
   }
 
   return (
@@ -41,7 +44,11 @@ export default function Home() {
             />
             <input type="submit" value="Generate response" />
           </form>
-          <div className={styles.result}>{result}</div>
+          {isLoading ? (
+            <div>Loading...</div> // Replace with your loading animation
+          ) : (
+            <div className={styles.result}>{result}</div>
+          )}
         </main>
       </body>
     </div>
