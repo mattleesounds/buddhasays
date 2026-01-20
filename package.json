@@ -1,16 +1,24 @@
 {
-  "name": "openai-quickstart-node",
+  "name": "buddhasays",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^12.1.6",
     "openai": "^4.28.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-next": "12.1.6"
   }
 }
